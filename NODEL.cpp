@@ -10,14 +10,14 @@ ll a,b,k;
 void ChatGPT()
 {
     ll l=0,r=1e18;
+        ll ab=a*b/__gcd(a,b);
     while(l<=r)
     {
         ll m=(l+r)/2;
-        ll ab=a*b/__gcd(a,b);
         ll pos=m-(m/a+m/b-m/ab);
         if(pos>=k) r=m-1;
         else l=m+1;
-    }
+    }cout<<r+1<<"\n";
 }
 kien()
 {
@@ -33,6 +33,6 @@ cin>>t;
 while(t--)
 {
     cin>>k>>a>>b;
-
+ChatGPT();
 }
 }
