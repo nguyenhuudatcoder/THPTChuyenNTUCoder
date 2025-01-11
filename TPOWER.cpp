@@ -25,7 +25,7 @@ kien()
         cin >> a[i];
     }
     sort(a, a + n);
-    for (int p = 1; p <= min(k, 65); p++)
+    for (int p = 1; p <= min(k, 32); p++)
     {
         s *= 2;
         for (int i = n - 1; i > 0; i--)
