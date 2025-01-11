@@ -40,6 +40,6 @@ kien()
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
-    cin>>k>>n;for(int i=0;i<n;i++)cin>>a[i];
+    cin>>k>>n;for(int i=0;i<n;i++)cin>>a[i];sort(a,a+n);
     ChatGPT(0);cout<<ans;
 }
