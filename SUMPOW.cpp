@@ -6,38 +6,6 @@ using namespace std;
 const ll inf = LLONG_MAX;
 const ll mod = 1e9 + 7;
 ll n;
-vector<ll> ans;
-ll luythua[35], s;
-int used[31];
-void ChatGPT(int dick)
-{
-    for (int i = ans.size(); i <= 31; i++)
-    {
-        if (s + luythua[i] == n)
-        {
-            ans.push_back(luythua[i]);
-            sort(ans.begin(), ans.end());
-            for (auto a : ans)
-                cout << a << " ";
-            // cout << luythua[i];
-            exit(0);
-        }
-        else if (s + luythua[i] < n && used[i] == 0)
-        {
-            used[i] = 1;
-            s += luythua[i];
-            ans.push_back(luythua[i]);
-            ChatGPT(dick + 1);
-        }
-        else if (s + luythua[i] > n)
-        {
-            used[i] = 0;
-            s -= ans.back();
-            ans.pop_back();
-            return;
-        }
-    }
-}
 kien()
 {
     // if(fopen(".inp","r"))
@@ -49,8 +17,18 @@ kien()
     cin.tie(0);
     cout.tie(0);
     cin >> n;
-    luythua[0] = 1;
-    for (int i = 1; i <= 31; i++)
-        luythua[i] = luythua[i - 1] * 2;
-    ChatGPT(0);
+    if (n & 1)
+    {
+        cout << 1 << ' ';
+        n--;
+    }
+    int i = 0;
+    int ans = 1;
+    while ((n >> i) > 0)
+    {
+        if ((n >> i) & 1)
+            cout << ans << ' ';
+        i++;
+        ans *= 2;
+    }
 }
