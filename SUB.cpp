@@ -23,7 +23,7 @@ kien()
         t = -inf, s = -inf;
         cin >> n;
         for (int i = 1; i <= n; i++)
-        
+        {
             cin >> a[i];
             t = max({t, t + a[i], a[i]});
             a[i] = a[i - 1] + a[i];
