@@ -10,6 +10,11 @@ struct dick
 {
     int day, bounty;
 };
+bool cmp(dick a,dick b)
+{
+    if(a.day==b.day)return a.bounty<b.bounty;
+    return a.day<b.day;
+}
 dick a[1005];
 int dp[380];
 kien()
@@ -27,7 +32,7 @@ kien()
         cin >> a[i].day;
     for (int i = 0; i < n; i++)
         cin >> a[i].bounty;
-    sort(a, a + n);
+    sort(a, a + n,cmp);
     dp[a[0].day] = a[0].bounty;
     for (int i = 1; i < n; i++)
         for (int j = 0; j <= a[i].day - k; j++)
